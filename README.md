@@ -1,0 +1,2 @@
+# Checkers
+Eksamensproject - Just checkers
