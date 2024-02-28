@@ -3,5 +3,6 @@ function setup() {
 }
 
 function draw() {
-  background(220);
+  console.log(333)
+  background(220,22,222);
 }
