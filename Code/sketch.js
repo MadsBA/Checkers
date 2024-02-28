@@ -1,8 +1,8 @@
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(840, 840);
 }
 
 function draw() {
-  console.log(333)
-  background(220,22,222);
+  background(222);
+  for (let i; i > )
 }
