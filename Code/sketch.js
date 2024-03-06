@@ -3,8 +3,8 @@ function setup() {
 }
 
 function draw() {
-  background(222);
+  background(202);
   for (let i; i > 7; i++){
-    line(0, 0, height, width,)
+    rect(0,0,100,100);
   }
 }
