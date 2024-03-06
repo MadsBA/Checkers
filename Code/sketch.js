@@ -4,7 +4,7 @@ function setup() {
 
 function draw() {
   background(222);
-  for (let i; i > 10; i++){
-
+  for (let i; i > 7; i++){
+    line(0, 0, height, width,)
   }
 }
