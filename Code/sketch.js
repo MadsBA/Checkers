@@ -3,16 +3,30 @@ function setup() {
 }
 
 function draw() {
-  background(202);
-  for (let i=0; i < 7; i++){
-    for (let j=0; j < 7; j++){
-      //fill(farve)
-      rect((0+(width-20)/7*i)+10,(0+(height-20)/7*j)+10,(width-20)/7,(height-20)/7);
-      //if (fill == 0){
-        //fill(220);
-      //} else {
-        //fill(0);
-      //}
+  background(100);
+  let col = 0;
+  let row = 0;
+  let color1 = 0;
+  let color2 = 255;
+
+  for (let i=0; i < 8; i++){
+    for (let j=0; j < 8; j++){
+      
+      if (i%2 == 0){
+        color1 = 255;
+        color2 = 0;
+      } else {
+        color1 = 0;
+        color2 = 255;
+      }
+
+      if (j%2 == 0){
+        fill (color1);
+      } else {
+        fill (color2);
+      }
+
+      rect((0+(width-20)/8*i)+10,(0+(height-20)/8*j)+10,(width-20)/8,(height-20)/8);
     }
   }
 }
