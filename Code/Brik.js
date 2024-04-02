@@ -1,18 +1,15 @@
-
+var BrikX = 0;
+var BrikY = 0;
 class Brik{
-    constructor(x,y){
-        
-    BrikX = x;
-    BrikY = y;
+
+    constructor(x,y){   
+    this.BrikX = x;
+    this.BrikY = y;
 
     }
-    update(){
+   
+   Show(){
+   circle(this.BirkX,this.BrikY,20);
+   }
 
-
-
-    }
-    show(){
-    circle(BirkX,BrikY,20)
-
-    }
 }
