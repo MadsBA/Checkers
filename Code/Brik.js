@@ -45,12 +45,12 @@ class Brik{
   }
   
   Clicked(){
-    if (dist(mouseX,mouseY, this.brikX, this.brikY) < 30){
+    if (dist(mouseX,mouseY, this.BrikX, this.BrikY) < 45){
       push();
       noFill();
       stroke(0,255,0);
       strokeWeight(7);
-      circle(200,200,300);
+      circle(this.BrikX,this.BrikY,90);
       pop();
     }
   }
