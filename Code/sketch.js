@@ -26,14 +26,14 @@ function setup() {
 }
 
 function draw() {
-  background(100,100,100,2);
+  background(100);
   let color1 = 0;
   let color2 = 255;
   for (let i=0; i < 8; i++){
     for (let j=0; j < 8; j++){   
   
       // En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
-      // 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort.
+      // 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. 
       if (i%2 == 0){
         color1 = 255;
         color2 = 0;
@@ -42,17 +42,18 @@ function draw() {
         color2 = 255;
       }
       if (j%2 == 0){
-        fill (color1,color1,color1,55);
+        fill (color1);
       } else {
-        fill (color2,color2,color2,55);
+        fill (color2);
       }
       // Når det kommer til at lave selve firkanterne bruges variablerne i og j til at bestemme placeringen af firkanterne for at lave et fuldt bræt.
       rect((0+(width-20)/8*i)+10,(0+(height-20)/8*j)+10,(width-20)/8,(height-20)/8);
     }
   }
   for(let i = 0; i< MaxNr; i++){
-   Brikker[i].Update();
+    Brikker[i].Update();
+    Brikker[i].Clicked();
     Brikker[i].Show();
-
+    
     }
 }
