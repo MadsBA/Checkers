@@ -3,6 +3,8 @@ let BrikY = 0;
 let Red = 0;
 let Green = 0;
 let Blue = 0;
+let BluePiece = false;
+let RedPiece = false;
 class Brik{
 
     constructor(x,y){   
@@ -12,10 +14,15 @@ class Brik{
         this.Red = 255;
         this.Green = 0;
         this.Blue = 0;
+        this.RedPiece = true;
+        this.BluePiece = false;
+
         } else {
         this.Red = 0;
         this.Green = 0;
         this.Blue = 255;
+        this.BluePiece = true;
+        this.RedPiece = false;
         }
     }
    
@@ -25,7 +32,13 @@ class Brik{
    circle(this.BrikX,this.BrikY,width/9);
    pop()
    }
-   Update(){
 
+   Update(){
+     if(this.RedPiece === true){
+     this.BrikY = this.BrikY + 1
+     } else 
+     if(this.BluePiece === true){
+     this.BrikY = this.BrikY - 1
+     }
    }
 }

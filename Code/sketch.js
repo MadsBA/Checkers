@@ -2,11 +2,27 @@ let Brikker = [];
 let MaxNr = 24;
 
 function setup() {
-  createCanvas(840, 840);
+  createCanvas(820, 820);
   for(let i = 0; i< MaxNr; i++){
-    Brikker.push(new Brik(random(0,width),random(0,height),Math.round(0,1)));
+    if(i < 4){
+    Brikker.push(new Brik((width-20)/16*(i*4+1)+10,(height-20)/16+10));
+    } else 
+    if(i < 8){
+    Brikker.push(new Brik((width-20)/16*((i-4)*4+3)+10,(height-20)/16*3+10))
+    } else
+    if(i< 12){
+    Brikker.push(new Brik((width-20)/16*((i-8)*4+1)+10,(height-20)/16*5+10))
+    } else
+    if(i< 16){
+    Brikker.push(new Brik((width-20)/16*((i-12)*4+3)+10,(height-20)/16*11+10))
+    } else
+    if(i< 20){
+    Brikker.push(new Brik((width-20)/16*((i-16)*4+1)+10,(height-20)/16*13+10))
+    } else
+    if(i< 24){
+    Brikker.push(new Brik((width-20)/16*((i-20)*4+3)+10,(height-20)/16*15 +10))
+    }
   }
-
 }
 
 function draw() {
@@ -34,6 +50,8 @@ function draw() {
     }
   }
   for(let i = 0; i< MaxNr; i++){
+    Brikker[i].Update();
     Brikker[i].Show();
+
     }
 }
