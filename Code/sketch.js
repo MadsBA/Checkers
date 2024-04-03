@@ -32,7 +32,8 @@ function draw() {
   for (let i=0; i < 8; i++){
     for (let j=0; j < 8; j++){   
   
-      // % tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter
+      // En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
+      // 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort.
       if (i%2 == 0){
         color1 = 255;
         color2 = 0;
