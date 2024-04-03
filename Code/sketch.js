@@ -26,7 +26,7 @@ function setup() {
 }
 
 function draw() {
-  background(100);
+  background(100,100,100,2);
   let color1 = 0;
   let color2 = 255;
   for (let i=0; i < 8; i++){
@@ -41,16 +41,16 @@ function draw() {
         color2 = 255;
       }
       if (j%2 == 0){
-        fill (color1);
+        fill (color1,color1,color1,55);
       } else {
-        fill (color2);
+        fill (color2,color2,color2,55);
       }
       // Når det kommer til at lave selve firkanterne bruges variablerne i og j til at bestemme placeringen af firkanterne for at lave et fuldt bræt.
       rect((0+(width-20)/8*i)+10,(0+(height-20)/8*j)+10,(width-20)/8,(height-20)/8);
     }
   }
   for(let i = 0; i< MaxNr; i++){
-    Brikker[i].Update();
+   Brikker[i].Update();
     Brikker[i].Show();
 
     }

@@ -28,17 +28,19 @@ class Brik{
    
    Show(){
    push()
-   fill(this.Red,this.Green,this.Blue)
+   strokeWeight(5)
+   stroke(this.Red,100,this.Blue,100)
+   fill(this.Red,this.Green,this.Blue,150)
    circle(this.BrikX,this.BrikY,width/9);
    pop()
    }
 
    Update(){
      if(this.RedPiece === true){
-     this.BrikY = this.BrikY + 1
+     this.BrikY = this.BrikY
      } else 
      if(this.BluePiece === true){
-     this.BrikY = this.BrikY - 1
+     this.BrikY = this.BrikY
      }
    }
 }
