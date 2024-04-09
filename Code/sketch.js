@@ -52,8 +52,7 @@ function draw() {
   }
   for(let i = 0; i< MaxNr; i++){
     Brikker[i].Update();
-    Brikker[i].Clicked();
     Brikker[i].Show();
-    
+    Brikker[i].Clicked();
     }
 }
