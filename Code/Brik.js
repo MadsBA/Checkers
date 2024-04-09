@@ -5,6 +5,7 @@ let Green = 0;
 let Blue = 0;
 let BluePiece = false;
 let RedPiece = false;
+let mouseover = false;
 class Brik{
 
   constructor(x,y){   
@@ -45,14 +46,13 @@ class Brik{
     }
   
   Clicked(){
-    if (dist(mouseX, mouseY, 150,150) < 100/2){
-      mouseover = true;
+    if (dist(mouseX, mouseY, this.BrikX, this.BrikY) < 45){
+      push();
       noFill();
       stroke(0,255,0);
       strokeWeight(7);
-      circle(200,200,300);
-      
+      circle(this.BrikX,this.BrikY,90);
+      pop();
     }
   }
-  
 }

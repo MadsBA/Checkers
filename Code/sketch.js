@@ -56,3 +56,12 @@ function draw() {
     Brikker[i].Clicked();
     }
 }
+
+function mouseReleased(){
+for (let i = 0; i < MaxNr; i++) {
+    if(mouseover == true){
+    hold = !hold;
+    println("roger roger")
+    }
+  }
+}
