@@ -54,4 +54,5 @@ class Brik{
       pop();
     }
   }
+  // mouseY < this.BrikY - 10 && mouseY > BrikY + 10
 }
