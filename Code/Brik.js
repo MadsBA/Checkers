@@ -53,6 +53,9 @@ class Brik{
       strokeWeight(7);
       circle(this.BrikX,this.BrikY,90);
       pop();
+      mouseover = true;
+    } else {
+      mouseover = false;
     }
   }
 }
