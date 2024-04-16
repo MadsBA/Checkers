@@ -1,10 +1,3 @@
-let BrikX = 0;
-let BrikY = 0;
-let Red = 0;
-let Green = 0;
-let Blue = 0;
-let BluePiece = false;
-let RedPiece = false;
 class Brik{
 
     constructor(x,y){   
@@ -16,6 +9,8 @@ class Brik{
         this.Blue = 0;
         this.RedPiece = true;
         this.BluePiece = false;
+        this.Picking = false;
+        Lock = false;
 
         } else {
         this.Red = 0;
@@ -23,6 +18,7 @@ class Brik{
         this.Blue = 255;
         this.BluePiece = true;
         this.RedPiece = false;
+        this.Picking = false;
         }
     }
   
@@ -36,22 +32,37 @@ class Brik{
   }
 
   Update(){
+    console.log(this.picking);
     if(this.RedPiece === true){
-    this.BrikY = this.BrikY
+       this.BrikY = this.BrikY
     } else 
     if(this.BluePiece === true){
-    this.BrikY = this.BrikY
+       this.BrikY = this.BrikY
     }
+    if(this.Picking === true){
+       push();
+       fill(200,200,200);
+       stroke(0,255,0);
+       strokeWeight(7);
+       circle(this.BrikX,this.BrikY,width/9);
+       pop();
+    }
+
   }
+
   
   Clicked(){
-    if (dist(mouseX,mouseY, this.brikX, this.brikY) < 30){
-      push();
-      noFill();
-      stroke(0,255,0);
-      strokeWeight(7);
-      circle(200,200,300);
-      pop();
+    if (dist(mouseX,mouseY,this.BrikX,this.BrikY) < width/18){
+      if (this.Picking === false){
+          if(Lock === false){
+          this.Picking = true;
+          Lock = true;
+          }
+         }else 
+      if (this.Picking === true){
+          this.Picking = false;
+          Lock = false;
+        }
+      }
     }
   }
-}
