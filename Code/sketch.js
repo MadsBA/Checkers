@@ -1,8 +1,19 @@
 let Brikker = [];
 let MaxNr = 24;
+let cols = 8;
+let rows = 8;
+let board = [];
 
 function setup() {
   createCanvas(820, 820);
+
+  for(let i = 0; i < cols; i++){
+  board[i] = [];
+    for(let j = 0; j < rows; j++){
+  board[i][j] = 0; 
+    }
+  }
+  print(board);
   for(let i = 0; i< MaxNr; i++){
     if(i < 4){
     Brikker.push(new Brik((width-20)/16*(i*4+1)+10,(height-20)/16+10));
@@ -29,8 +40,8 @@ function draw() {
   background(100);
   let color1 = 0;
   let color2 = 255;
-  for (let i=0; i < 8; i++){
-    for (let j=0; j < 8; j++){   
+  for (let i=0; i < cols; i++){
+    for (let j=0; j < rows; j++){   
   
       // En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
       // 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. 

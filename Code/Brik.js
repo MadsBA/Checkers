@@ -1,6 +1,6 @@
 class Brik{
 
-    constructor(x,y){   
+  constructor(x,y){   
     this.BrikX = x;
     this.BrikY = y;
     if(this.BrikY < height/2){
@@ -23,13 +23,13 @@ class Brik{
     }
   
   Show(){
-  push()
-  strokeWeight(5)
-  stroke(this.Red,100,this.Blue,100)
-  fill(this.Red,this.Green,this.Blue,150)
-  circle(this.BrikX,this.BrikY,width/9);
-  pop()
-  }
+    push()
+    strokeWeight(5)
+    stroke(this.Red,100,this.Blue,100)
+    fill(this.Red,this.Green,this.Blue,150)
+    circle(this.BrikX,this.BrikY,width/9);
+    pop()
+    }
 
   Update(){
     console.log(this.picking);
