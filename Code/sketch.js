@@ -65,15 +65,11 @@ function draw() {
   for(let i = 0; i< MaxNr; i++){
     Brikker[i].Update();
     Brikker[i].Show();
-    Brikker[i].Clicked();
     }
 }
 
 function mouseReleased(){
 for (let i = 0; i < MaxNr; i++) {
-    if(mouseover == true){
-    hold = !hold;
-    println("roger roger")
-    }
+  Brikker[i].Clicked();
   }
 }
