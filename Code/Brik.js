@@ -34,23 +34,20 @@ class Brik{
   Update(){
     console.log(this.picking);
     if(this.RedPiece === true){
-       this.BrikY = this.BrikY
+      this.BrikY = this.BrikY
     } else 
     if(this.BluePiece === true){
-       this.BrikY = this.BrikY
+      this.BrikY = this.BrikY
     }
     if(this.Picking === true){
-       push();
-       fill(200,200,200);
-       stroke(0,255,0);
-       strokeWeight(7);
-       circle(this.BrikX,this.BrikY,width/9);
-       pop();
+      push();
+      fill(200,200,200);
+      stroke(0,255,0);
+      strokeWeight(7);
+      circle(this.BrikX,this.BrikY,width/9);
+      pop();
     }
-
   }
-
-  
   Clicked(){
     if (dist(mouseX,mouseY,this.BrikX,this.BrikY) < width/18){
       if (this.Picking === false){
@@ -58,7 +55,7 @@ class Brik{
           this.Picking = true;
           Lock = true;
           }
-         }else 
+        }else 
       if (this.Picking === true){
           this.Picking = false;
           Lock = false;

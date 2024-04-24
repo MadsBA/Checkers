@@ -4,13 +4,14 @@ let cols = 8;
 let rows = 8;
 let board = [];
 
+
 function setup() {
   createCanvas(820, 820);
 
   for(let i = 0; i < cols; i++){
   board[i] = [];
-    for(let j = 0; j < rows; j++){
-  board[i][j] = 0; 
+  for(let j = 0; j < rows; j++){
+    board[i][j] = 0; 
     }
   }
   print(board);
@@ -64,13 +65,15 @@ function draw() {
   for(let i = 0; i< MaxNr; i++){
     Brikker[i].Update();
     Brikker[i].Show();
-    
+    Brikker[i].Clicked();
     }
 }
-function mousePressed(){
-  for(let i = 0; i< MaxNr; i++){
 
-    Brikker[i].Clicked();
-
- }
+function mouseReleased(){
+for (let i = 0; i < MaxNr; i++) {
+    if(mouseover == true){
+    hold = !hold;
+    println("roger roger")
+    }
+  }
 }
