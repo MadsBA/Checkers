@@ -18,21 +18,27 @@ function setup() {
   for(let i = 0; i< MaxNr; i++){
     if(i < 4){
     Brikker.push(new Brik((width-20)/16*(i*4+1)+10,(height-20)/16+10));
+    board[0][i*2] = 1;
     } else 
     if(i < 8){
     Brikker.push(new Brik((width-20)/16*((i-4)*4+3)+10,(height-20)/16*3+10))
+    board[1][i*2-8+1] = 1;
     } else
     if(i< 12){
     Brikker.push(new Brik((width-20)/16*((i-8)*4+1)+10,(height-20)/16*5+10))
+    board[2][i*2-(8*2)] = 1;
     } else
     if(i< 16){
     Brikker.push(new Brik((width-20)/16*((i-12)*4+3)+10,(height-20)/16*11+10))
+    board[5][i*2-(8*3)+1] = 2;
     } else
     if(i< 20){
     Brikker.push(new Brik((width-20)/16*((i-16)*4+1)+10,(height-20)/16*13+10))
+    board[6][i*2-(8*4)] = 2;
     } else
     if(i< 24){
     Brikker.push(new Brik((width-20)/16*((i-20)*4+3)+10,(height-20)/16*15 +10))
+    board[7][i*2-(8*5)+1] = 2;
     }
   }
 }
