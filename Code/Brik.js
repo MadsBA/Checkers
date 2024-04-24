@@ -32,7 +32,6 @@ class Brik{
     }
 
   Update(){
-    console.log(this.picking);
     if(this.RedPiece === true){
       this.BrikY = this.BrikY
     } else 
