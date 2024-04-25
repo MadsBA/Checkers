@@ -9,30 +9,30 @@ function setup() {
   createCanvas(820, 820);
 
   for(let i = 0; i < cols; i++){
-  board[i] = [];
-  for(let j = 0; j < rows; j++){
-    board[i][j] = 0
-    if(i < 3  || i > 4){
-      if(j%2 == 0){
-        if(i%2 == 0){
-          if(i > 4){
-            board[i][j] = 1; 
-          } else {
-            board[i][j] = 2;
+    board[i] = [];
+    for(let j = 0; j < rows; j++){
+      board[i][j] = 0
+      if(i < 3  || i > 4){
+        if(j%2 == 0){
+          if(i%2 == 0){
+            if(i > 4){
+              board[i][j] = 1; 
+            } else {
+              board[i][j] = 2;
+            }
           }
         }
-      }
-      if(j%2 == 1){
-        if(i%2 == 1){
-          if(i > 4){
-            board[i][j] = 1; 
-          } else {
-            board[i][j] = 2;
+        if(j%2 == 1){
+          if(i%2 == 1){
+            if(i > 4){
+              board[i][j] = 1; 
+            } else {
+              board[i][j] = 2;
+            }
           }
         }
       }
     }
-  }
 
 
   }
