@@ -40,6 +40,7 @@ function setup() {
     for(let j = 0; j < rows; j++){
       if(board[i][j] == 1 || board[i][j] == 2){
         Brikker.push(new Brik(((width-20)/8*j+(width-20)/16)+10,((height-20)/8*i+(height-20)/16)+10));
+        
       }
     }
   }
@@ -75,13 +76,15 @@ function draw() {
     }
   }
   for(let i = 0; i< Brikker.length; i++){
+    Brikker[i].player();
+    console.log(Brikker[i].Player_n)
     Brikker[i].Update();
     Brikker[i].Show();
   }
 }
 
 function mouseReleased(){
-for (let i = 0; i < MaxNr; i++) {
+for (let i = 0; i < Brikker.length; i++) {
   Brikker[i].Clicked();
   //Brikker[i].move();
   }
