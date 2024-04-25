@@ -32,13 +32,13 @@ class Brik{
     }
 
   Update(){
-    if(this.RedPiece === true){
+    if(this.RedPiece == true){
       this.BrikY = this.BrikY
     } else 
-    if(this.BluePiece === true){
+    if(this.BluePiece == true){
       this.BrikY = this.BrikY
     }
-    if(this.Picking === true){
+    if(this.Picking == true){
       push();
       fill(200,200,200);
       stroke(0,255,0);
@@ -49,16 +49,23 @@ class Brik{
   }
   Clicked(){
     if (dist(mouseX,mouseY,this.BrikX,this.BrikY) < width/18){
-      if (this.Picking === false){
-          if(Lock === false){
+      if (this.Picking == false){
+          if(Lock == false){
           this.Picking = true;
           Lock = true;
           }
         }else 
-      if (this.Picking === true){
+      if (this.Picking == true){
           this.Picking = false;
           Lock = false;
         }
+      }
+    }
+  player(){
+    if (this.BrikY < height/2){
+        this.Player_n = 1;
+      }else{
+        this.Player_n = 2;
       }
     }
   }

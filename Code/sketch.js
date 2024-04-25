@@ -4,7 +4,6 @@ let cols = 8;
 let rows = 8;
 let board = [];
 
-
 function setup() {
   createCanvas(820, 820);
 
@@ -40,6 +39,8 @@ function setup() {
     Brikker.push(new Brik((width-20)/16*((i-20)*4+3)+10,(height-20)/16*15 +10))
     board[7][i*2-(8*5)+1] = 2;
     }
+    Brikker[i].player();
+    console.log(Brikker[i].Player_n)
   }
 }
 
@@ -65,17 +66,18 @@ function draw() {
         fill (color2);
       }
       // Når det kommer til at lave selve firkanterne bruges variablerne i og j til at bestemme placeringen af firkanterne for at lave et fuldt bræt.
-      rect((0+(width-20)/8*i)+10,(0+(height-20)/8*j)+10,(width-20)/8,(height-20)/8);
+      rect(((width-20)/8*i)+10,((height-20)/8*j)+10,(width-20)/8,(height-20)/8);
     }
   }
   for(let i = 0; i< MaxNr; i++){
     Brikker[i].Update();
     Brikker[i].Show();
-    }
+  }
 }
 
 function mouseReleased(){
 for (let i = 0; i < MaxNr; i++) {
   Brikker[i].Clicked();
+  //Brikker[i].move();
   }
 }
