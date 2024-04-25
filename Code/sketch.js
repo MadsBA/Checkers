@@ -37,27 +37,15 @@ function setup() {
 
   }
   print(board);
-  for(let i = 0; i< MaxNr; i++){
-    if(i < 4){
-    Brikker.push(new Brik((width-20)/16*(i*4+1)+10,(height-20)/16+10));
-    } else 
-    if(i < 8){
-    Brikker.push(new Brik((width-20)/16*((i-4)*4+3)+10,(height-20)/16*3+10))
-    } else
-    if(i< 12){
-    Brikker.push(new Brik((width-20)/16*((i-8)*4+1)+10,(height-20)/16*5+10))
-    } else
-    if(i< 16){
-    Brikker.push(new Brik((width-20)/16*((i-12)*4+3)+10,(height-20)/16*11+10))
-    } else
-    if(i< 20){
-    Brikker.push(new Brik((width-20)/16*((i-16)*4+1)+10,(height-20)/16*13+10))
-    } else
-    if(i< 24){
-    Brikker.push(new Brik((width-20)/16*((i-20)*4+3)+10,(height-20)/16*15 +10))
+  for(let i = 0; i < cols; i++){
+    for(let j = 0; j < rows; j++){
+      if(board[i][j] == 1 || board[i][j] == 2){
+        Brikker.push(new Brik(((width-20)/8*j+(width-20)/16)+10,((height-20)/8*i+(height-20)/16)+10));
+      }
     }
   }
-}
+
+} 
 
 function draw() {
   background(100);
@@ -84,7 +72,7 @@ function draw() {
       rect((0+(width-20)/8*i)+10,(0+(height-20)/8*j)+10,(width-20)/8,(height-20)/8);
     }
   }
-  for(let i = 0; i< MaxNr; i++){
+  for(let i = 0; i< Brikker.length; i++){
     Brikker[i].Update();
     Brikker[i].Show();
     }
