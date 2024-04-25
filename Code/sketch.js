@@ -42,12 +42,13 @@ function setup() {
         Brikker.push(new Brik(((width-20)/8*j+(width-20)/16)+10,((height-20)/8*i+(height-20)/16)+10));
       }
     }
-    Brikker[i].player();
-    console.log(Brikker[i].Player_n)
   }
-
+  for(let i = 0; i < Brikker.length; i++){
+    Brikker[i].player();
+    console.log(Brikker[i].Player_n);
+  }
 } 
-
+ //fuck dette
 function draw() {
   background(100);
   let color1 = 0;
@@ -55,8 +56,8 @@ function draw() {
   for (let i=0; i < cols; i++){
     for (let j=0; j < rows; j++){   
   
-      // En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
-      // 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. 
+      /* En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
+      2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. */
       if (i%2 == 0){
         color1 = 255;
         color2 = 0;
