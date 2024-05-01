@@ -81,15 +81,15 @@ function draw() {
       );
     }
   }
-  for (let i = 0; i < Brikker.length; i++) {
+  for(let i = 0; i< Brikker.length; i++){
     Brikker[i].Update();
     Brikker[i].Show();
   }
 }
 
-function mouseReleased() {
-  for (let i = 0; i < MaxNr; i++) {
-    Brikker[i].Clicked();
-    //Brikker[i].move();
+function mouseReleased(){
+for (let i = 0; i < Brikker.length; i++) {
+  Brikker[i].Clicked();
+  Brikker[i].move();
   }
 }
