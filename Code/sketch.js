@@ -1,4 +1,3 @@
-let Brikker = [];
 let MaxNr = 24;
 let cols = 8;
 let rows = 8;
@@ -10,46 +9,16 @@ function setup() {
   for (let i = 0; i < cols; i++) {
     board[i] = [];
     for (let j = 0; j < rows; j++) {
-      board[i][j] = 0;
-      if (i < 3 || i > 4) {
-        if (j % 2 == 0) {
-          if (i % 2 == 0) {
-            if (i > 4) {
-              board[i][j] = 1;
-            } else {
-              board[i][j] = 2;
-            }
-          }
-        }
-        if (j % 2 == 1) {
-          if (i % 2 == 1) {
-            if (i > 4) {
-              board[i][j] = 1;
-            } else {
-              board[i][j] = 2;
-            }
-          }
-        }
+      board[i][j] = new Brik(i,j);
       }
     }
-  }
   print(board);
-  for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++) {
-      if (board[i][j] == 1 || board[i][j] == 2) {
-        Brikker.push(
-          new Brik(
-            ((width - 20) / 8) * j + (width - 20) / 16 + 10,
-            ((height - 20) / 8) * i + (height - 20) / 16 + 10
-          )
-        );
-      }
-    }
-  }
-  for (let i = 0; i < Brikker.length; i++) {
-    Brikker[i].player();
-    console.log(Brikker[i].Player_n);
-  }
+ 
+
+
+
+
+
 }
 //fuck dette
 function draw() {
@@ -81,15 +50,19 @@ function draw() {
       );
     }
   }
-  for(let i = 0; i< Brikker.length; i++){
-    Brikker[i].Update();
-    Brikker[i].Show();
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++){
+    board[i][j].Update();
+    board[i][j].Show();
+    }
   }
 }
 
 function mouseReleased(){
-for (let i = 0; i < Brikker.length; i++) {
-  Brikker[i].Clicked();
-  Brikker[i].move();
+for (let i = 0; i < cols; i++) {
+  for (let j = 0; j < rows; j++){
+  board[i][j].Clicked();
+  board[i][j].move();
   }
+}
 }

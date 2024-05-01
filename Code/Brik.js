@@ -1,8 +1,10 @@
 class Brik {
-  constructor(x, y) {
-    this.BrikX = x;
-    this.BrikY = y;
-    if (this.BrikY < height / 2) {
+  constructor(i, j, c) {
+    this.BrikI = i;
+    this.BrikJ = j;
+    this.BrikColor = c;
+
+    if (this.BrikJ < 5) {
       this.Red = 255;
       this.Green = 0;
       this.Blue = 0;
@@ -25,22 +27,22 @@ class Brik {
     strokeWeight(5);
     stroke(this.Red, 100, this.Blue, 100);
     fill(this.Red, this.Green, this.Blue, 150);
-    circle(this.BrikX, this.BrikY, width / 9);
+    circle();
     pop();
   }
 
   Update() {
     if (this.RedPiece == true) {
-      this.BrikY = this.BrikY;
+      this.BrikJ = this.BrikJ;
     } else if (this.BluePiece == true) {
-      this.BrikY = this.BrikY;
+      this.BrikJ = this.BrikJ;
     }
     if (this.Picking == true) {
       push();
       fill(200, 200, 200);
       stroke(0, 255, 0);
       strokeWeight(7);
-      circle(this.BrikX, this.BrikY, width / 9);
+      circle(width/16+width/8*this.BrikI, height/16+height/8*this.BrikJ, width / 9);
       pop();
     }
   }
@@ -74,6 +76,7 @@ class Brik {
           console.log("Jeg er sikker");
           this.BrikX = this.BrikX - 100;
           this.BrikY = this.BrikY - 100;
+
           Lock = false;
           this.Picking = false;
         } else if (mouseX < this.BrikX + 150 && mouseX > this.BrikX + 50){
