@@ -72,6 +72,16 @@ class Brik {
       ) {
         if (mouseX > this.BrikX - 150 && mouseX < this.BrikX - 50) {
           console.log("Jeg er sikker");
+          this.BrikX = this.BrikX - 100;
+          this.BrikY = this.BrikY - 100;
+          Lock = false;
+          this.Picking = false;
+        } else if (mouseX < this.BrikX + 150 && mouseX > this.BrikX + 50){
+          console.log("Jeg er sikker");
+          this.BrikX = this.BrikX + 100;
+          this.BrikY = this.BrikY - 100;
+          Lock = false;
+          this.Picking = false;
         }
       }
     }
