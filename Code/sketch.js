@@ -9,59 +9,45 @@ function setup() {
   for (let i = 0; i < cols; i++) {
     board[i] = [];
     for (let j = 0; j < rows; j++) {
-      if (j < 3){
-      if(j%2 == 0){
-        if(i%2 == 0){
-      board[i][j] = new Brik(i,j,2);
-      } else {
-      board[i][j] = new Brik(i,j,0)
-      }  
-    } else { 
-        if(i%2 == 1){
-      board[i][j] = new Brik(i,j,2)
-    } else {
-      board[i][j] = new Brik(i,j,0)
-      }
-      }
-      } else 
-      if (j == 3){
-      board[i][j] = new Brik(i,j,0)
-      } else 
-      if (j == 4){
-      board[i][j] = new Brik(i,j,0)
-      } else
-      if (j > 4){
-        if(j%2 == 0){
-          if(i%2 == 0){
-        board[i][j] = new Brik(i,j,1);
+      if (j < 3) {
+        if (j % 2 == 0) {
+          if (i % 2 == 0) {
+            board[i][j] = new Brik(i, j, 2);
+          } else {
+            board[i][j] = new Brik(i, j, 0);
+          }
         } else {
-        board[i][j] = new Brik(i,j,0)
-        }  
-      } else { 
-          if(i%2 == 1){
-        board[i][j] = new Brik(i,j,1)
-      } else {
-        board[i][j] = new Brik(i,j,0)
+          if (i % 2 == 1) {
+            board[i][j] = new Brik(i, j, 2);
+          } else {
+            board[i][j] = new Brik(i, j, 0);
+          }
         }
-        }
-
       }
-
-
+      
+      if (j == 3 || j == 4) {
+        board[i][j] = new Brik(i, j, 0);
+        }
+        if (j > 4) {
+        if (j % 2 == 0) {
+          if (i % 2 == 0) {
+            board[i][j] = new Brik(i, j, 1);
+          } else {
+            board[i][j] = new Brik(i, j, 0);
+          }
+        } else {
+          if (i % 2 == 1) {
+            board[i][j] = new Brik(i, j, 1);
+          } else {
+            board[i][j] = new Brik(i, j, 0);
+          }
+        }
+      }
     }
   }
-  
-  
-  
- print(board);
-  }
+  print(board);
+}
 
-
-
-
-
-
-//fuck dette
 function draw() {
   background(100);
   let color1 = 0;
@@ -92,18 +78,18 @@ function draw() {
     }
   }
   for (let i = 0; i < cols; i++) {
-    for (let j = 0; j < rows; j++){
-    board[i][j].Update();
-    board[i][j].Show();
+    for (let j = 0; j < rows; j++) {
+      board[i][j].Update();
+      board[i][j].Show();
     }
   }
 }
 
-function mouseReleased(){
-for (let i = 0; i < cols; i++) {
-  for (let j = 0; j < rows; j++){
-  board[i][j].Clicked();
-  board[i][j].move();
+function mouseReleased() {
+  for (let i = 0; i < cols; i++) {
+    for (let j = 0; j < rows; j++) {
+      board[i][j].Clicked();
+      board[i][j].move();
+    }
   }
-}
 }
