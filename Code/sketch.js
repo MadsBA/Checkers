@@ -9,17 +9,58 @@ function setup() {
   for (let i = 0; i < cols; i++) {
     board[i] = [];
     for (let j = 0; j < rows; j++) {
-      board[i][j] = new Brik(i,j);
+      if (j < 3){
+      if(j%2 == 0){
+        if(i%2 == 0){
+      board[i][j] = new Brik(i,j,2);
+      } else {
+      board[i][j] = new Brik(i,j,0)
+      }  
+    } else { 
+        if(i%2 == 1){
+      board[i][j] = new Brik(i,j,2)
+    } else {
+      board[i][j] = new Brik(i,j,0)
       }
+      }
+      } else 
+      if (j == 3){
+      board[i][j] = new Brik(i,j,0)
+      } else 
+      if (j == 4){
+      board[i][j] = new Brik(i,j,0)
+      } else
+      if (j > 4){
+        if(j%2 == 0){
+          if(i%2 == 0){
+        board[i][j] = new Brik(i,j,1);
+        } else {
+        board[i][j] = new Brik(i,j,0)
+        }  
+      } else { 
+          if(i%2 == 1){
+        board[i][j] = new Brik(i,j,1)
+      } else {
+        board[i][j] = new Brik(i,j,0)
+        }
+        }
+
+      }
+
+
     }
-  print(board);
- 
+  }
+  
+  
+  
+ print(board);
+  }
 
 
 
 
 
-}
+
 //fuck dette
 function draw() {
   background(100);

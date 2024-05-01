@@ -4,7 +4,7 @@ class Brik {
     this.BrikJ = j;
     this.BrikColor = c;
 
-    if (this.BrikJ < 5) {
+    if (this.BrikColor == 2) {
       this.Red = 255;
       this.Green = 0;
       this.Blue = 0;
@@ -13,12 +13,23 @@ class Brik {
       this.Picking = false;
       Lock = false;
     } else {
+      if (this.BrikColor ==1){
       this.Red = 0;
       this.Green = 0;
       this.Blue = 255;
       this.BluePiece = true;
       this.RedPiece = false;
       this.Picking = false;
+      } else {
+      this.Red = 0;
+      this.Green = 0;
+      this.Blue = 0;
+      this.BluePiece = false;
+      this.RedPiece = false;
+      this.EmptyPiece = true;
+      this.Picking = false;
+      }
+    
     }
   }
 
@@ -27,7 +38,9 @@ class Brik {
     strokeWeight(5);
     stroke(this.Red, 100, this.Blue, 100);
     fill(this.Red, this.Green, this.Blue, 150);
-    circle();
+    if (this.EmptyPiece !== true){
+    circle((width-20)/16+(width-20)/8*this.BrikI+10, (height-20)/16+(height-20)/8*this.BrikJ+10, width / 9);
+    }
     pop();
   }
 
@@ -42,12 +55,12 @@ class Brik {
       fill(200, 200, 200);
       stroke(0, 255, 0);
       strokeWeight(7);
-      circle(width/16+width/8*this.BrikI, height/16+height/8*this.BrikJ, width / 9);
+      circle((width-40)/16+(width-40)/8*this.BrikI, (height-40)/16+(height-40)/8*this.BrikJ, width / 9);
       pop();
     }
   }
   Clicked() {
-    if (dist(mouseX, mouseY, this.BrikX, this.BrikY) < width / 18) {
+    if (dist(mouseX, mouseY, this.BrikX, this.BrikJ) < width / 18) {
       if (this.Picking == false) {
         if (Lock == false) {
           this.Picking = true;
