@@ -5,7 +5,6 @@ let board = [];
 
 function setup() {
   createCanvas(820, 820);
-
   for (let i = 0; i < cols; i++) {
     board[i] = [];
     for (let j = 0; j < rows; j++) {
@@ -24,11 +23,12 @@ function setup() {
           }
         }
       }
-      
+
       if (j == 3 || j == 4) {
         board[i][j] = new Brik(i, j, 0);
-        }
-        if (j > 4) {
+      }
+
+      if (j > 4) {
         if (j % 2 == 0) {
           if (i % 2 == 0) {
             board[i][j] = new Brik(i, j, 1);
@@ -45,7 +45,7 @@ function setup() {
       }
     }
   }
-  print(board);
+  console.log(board);
 }
 
 function draw() {
@@ -54,8 +54,8 @@ function draw() {
   let color2 = 255;
   for (let i = 0; i < cols; i++) {
     for (let j = 0; j < rows; j++) {
-      /* En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter ved at dividere i med
-      2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. */
+      /* En modulo operator (%) tjekker om det er et lige eller ulige tal for at automatisere farvelægningen af felter 
+      ved at dividere i med 2 for at se om den får en ulige eller lige værdi for at farve hvert andede felt sort. */
       if (i % 2 == 0) {
         color1 = 255;
         color2 = 0;

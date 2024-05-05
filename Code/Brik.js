@@ -3,33 +3,34 @@ class Brik {
     this.BrikI = i;
     this.BrikJ = j;
     this.BrikColor = c;
+    this.Picking = false;
+    Lock = false;
 
+    //rød brik
     if (this.BrikColor == 2) {
       this.Red = 255;
       this.Green = 0;
       this.Blue = 0;
       this.RedPiece = true;
       this.BluePiece = false;
-      this.Picking = false;
-      Lock = false;
-    } else {
-      if (this.BrikColor ==1){
+      this.Player_n = 2;
+    //blå brik
+    } else if (this.BrikColor ==1){
       this.Red = 0;
       this.Green = 0;
       this.Blue = 255;
       this.BluePiece = true;
       this.RedPiece = false;
-      this.Picking = false;
-      } else {
+      this.Player_n = 1;
+    //tomt felt
+    } else {
       this.Red = 0;
       this.Green = 0;
       this.Blue = 0;
       this.BluePiece = false;
       this.RedPiece = false;
       this.EmptyPiece = true;
-      this.Picking = false;
       }
-    
     }
   }
 
@@ -72,33 +73,41 @@ class Brik {
       }
     }
   }
-  player() {
-    if (this.BrikY < height / 2) {
-      this.Player_n = 1;
-    } else {
-      this.Player_n = -1;
-    }
-  }
   move() {
     if (this.Picking == true && Lock == true) {
-      if (
-        mouseY > this.BrikY + (150 * this.Player_n) &&
-        mouseY < this.BrikY + (50 * this.Player_n)
-      ) {
-        if (mouseX > this.BrikX - 150 && mouseX < this.BrikX - 50) {
-          console.log("Jeg er sikker");
-          this.BrikX = this.BrikX - 100;
-          this.BrikY = this.BrikY - 100;
+      console.log(this.Player_n);
+      switch (this.Player_n) {
+        case 1:
+          if (mouseY > this.BrikY - 150 && mouseY < this.BrikY - 50) {
+            if (mouseX > this.BrikX - 150 && mouseX < this.BrikX - 50) {
+              this.BrikX = this.BrikX - 100;
+              this.BrikY = this.BrikY - 100;
+              Lock = false;
+              this.Picking = false;
+            } else if (mouseX < this.BrikX + 150 && mouseX > this.BrikX + 50) {
+              this.BrikX = this.BrikX + 100;
+              this.BrikY = this.BrikY - 100;
+              Lock = false;
+              this.Picking = false;
+            }
+          }
+          break;
 
-          Lock = false;
-          this.Picking = false;
-        } else if (mouseX < this.BrikX + 150 && mouseX > this.BrikX + 50){
-          console.log("Jeg er sikker");
-          this.BrikX = this.BrikX + 100;
-          this.BrikY = this.BrikY - 100;
-          Lock = false;
-          this.Picking = false;
-        }
+        case 2:
+          if (mouseY < this.BrikY + 150 && mouseY > this.BrikY + 50) {
+            if (mouseX > this.BrikX - 150 && mouseX < this.BrikX - 50) {
+              this.BrikX = this.BrikX - 100;
+              this.BrikY = this.BrikY + 100;
+              Lock = false;
+              this.Picking = false;
+            } else if (mouseX < this.BrikX + 150 && mouseX > this.BrikX + 50) {
+              this.BrikX = this.BrikX + 100;
+              this.BrikY = this.BrikY + 100;
+              Lock = false;
+              this.Picking = false;
+            }
+          }
+          break;
       }
     }
   }
