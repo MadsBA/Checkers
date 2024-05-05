@@ -8,6 +8,9 @@ function setup() {
   for (let i = 0; i < cols; i++) {
     board[i] = [];
     for (let j = 0; j < rows; j++) {
+      /*Med en modulo operator (forklares mere i draw()) bliver hvert andet felt sat til at have værdien brikcolor 2
+        som gør brikken rød og player_n på 2. Kort sagt får den alle de værdier spiller 2's brikker skal bruge
+        til senere kode i brik.js*/
       if (j < 3) {
         if (j % 2 == 0) {
           if (i % 2 == 0) {
@@ -24,10 +27,12 @@ function setup() {
         }
       }
 
+      /*Siden række 3 og fire ikke skal have nogle brikker fra starten skal de alle have værdien 0*/
       if (j == 3 || j == 4) {
         board[i][j] = new Brik(i, j, 0);
       }
 
+      /* Samme princip som ved j<3 men til de sidste 3 rækker og hvor de får værdien 1 for at blive blå brikker i stedet for 2 og rød */
       if (j > 4) {
         if (j % 2 == 0) {
           if (i % 2 == 0) {

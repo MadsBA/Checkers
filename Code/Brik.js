@@ -3,34 +3,35 @@ class Brik {
     this.BrikI = i;
     this.BrikJ = j;
     this.BrikColor = c;
-    this.Picking = false;
-    Lock = false;
 
-    //rød brik
     if (this.BrikColor == 2) {
       this.Red = 255;
       this.Green = 0;
       this.Blue = 0;
       this.RedPiece = true;
       this.BluePiece = false;
+      this.Picking = false;
+      Lock = false;
       this.Player_n = 2;
-    //blå brik
-    } else if (this.BrikColor ==1){
+    } else {
+      if (this.BrikColor ==1){
       this.Red = 0;
       this.Green = 0;
       this.Blue = 255;
       this.BluePiece = true;
       this.RedPiece = false;
-      this.Player_n = 1;
-    //tomt felt
-    } else {
+      this.Picking = false;
+      this.Player_n = 2;
+      } else {
       this.Red = 0;
       this.Green = 0;
       this.Blue = 0;
       this.BluePiece = false;
       this.RedPiece = false;
       this.EmptyPiece = true;
+      this.Picking = false;
       }
+    
     }
   }
 
