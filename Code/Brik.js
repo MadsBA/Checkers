@@ -19,6 +19,7 @@ class Brik {
       this.Picking = false;
       this.IsAQueen = false;
       Lock = false;
+      this.Player_n = 2;
     } else {
       if (this.BrikColor ==1){
       this.Red = 0;
@@ -27,6 +28,7 @@ class Brik {
       this.BluePiece = true;
       this.RedPiece = false;
       this.Picking = false;
+      this.Player_n = 2;
       this.IsAQueen = false;
       } else {
       this.Red = 0;
